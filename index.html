@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base target="_top">
+    <title>Jumbotron Template for Bootstrap</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <!-- Bootstrap Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Project name</a>
+          <p class="navbar-brand">ログインユーザー：<?= loginUser ?></p>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+  
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <!--Printing scriptlets 出力スクリプトレットタグ-->
+        <h2><?=new Date()?></h2>
+
+        <form name="form1" id="form1" class="form-inline">
+          <div class="form-group">
+            <label for="search_key_p">シート名：　</label>
+            <select name="search_key_p" id="search_key_p" class="form-control">
+              <?!=getHtmlOptions()?> 
+            </select>  
+          </div>
+          <br>
+          <div class="form-group">
+            <lavel for="search_key_n">　端末名：　</label> <input name="search_key_n" id="search_key_n" class="form-control"></input>
+          </div>
+          <button type="button" class="btn btn-success" onclick="search();"><span class="glyphicon glyphicon-repeat">　取得する</span></button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container">
+        <div class="col-md-12">
+          <h2></h2>
+          <p></p>
+          
+        </div>
+        <div class="col-md-12" id="div1">
+        </div>
+      <hr>
+      <footer>
+        <img id="image">
+        <p>&copy; 2021 N.Oishi</p>
+      </footer>
+    </div> <!-- /container -->
+ 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
+    
+    <!-- Bootstrap Datepicker -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ja.min.js"></script>
+   
+    <script>
+      function search(){  
+        $('#div1').html('<img src="https://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif"/>　読み込み中');
+        google.script.run.withSuccessHandler(CallBack).getSpd(document.getElementById("form1"));
+      }      
+      function CallBack(s){
+      $('#div1').html(s);
+      }
+      (function() {
+        const fileId = '1Cnz-g9DxhQXS0fyz1FaJnFOvN6se_yj3';
+        const url = google.script.run
+          .withSuccessHandler(base64Data => {
+            const img = document.getElementById("image");
+            img.setAttribute("src", "data:image/png;base64," + base64Data);
+          })
+          .withFailureHandler(console.error)
+          .getBae64Image(fileId);      
+      })();
+      
+      $(function(){
+        $("input"). keydown(function(e) {
+            if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+    });
+
+    </script>
+  </body>
+</html>
