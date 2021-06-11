@@ -226,6 +226,9 @@ function getSpd(e){
             <div class="sm-form">
               <label for=form9" class="active">
                 固定IP
+                <button type="button" class="btn col" onclick="copyToClipboard(9)" data-toggle="tooltip" data-placement="top" title="Copy IP">
+                  <i class="fas fa-clipboard"></i>
+                </button>
               </label>
               <input type="text" id="form9" class="form-control" readonly value=${view[9]}>
             </div>
@@ -234,6 +237,9 @@ function getSpd(e){
             <div class="sm-form">
               <label for=form10" class="active">
                 サブネットマスク
+                <button type="button" class="btn col" onclick="copyToClipboard(10)" data-toggle="tooltip" data-placement="top" title="Copy subnetmask">
+                  <i class="fas fa-clipboard"></i>
+                </button>
               </label>
               <input type="text" id="form10" class="form-control" readonly value=${view[10]} >
             </div>
@@ -242,6 +248,9 @@ function getSpd(e){
             <div class="sm-form">
               <label for=form11" class="active">
                 ルーター
+                <button type="button" class="btn col" onclick="copyToClipboard(11)" data-toggle="tooltip" data-placement="top" title="Copy Rooter">
+                  <i class="fas fa-clipboard"></i>
+                </button>
               </label>
               <input type="text" id="form11" class="form-control" readonly value=${view[11]}>
             </div>
@@ -250,6 +259,9 @@ function getSpd(e){
             <div class="sm-form">
               <label for=form12" class="active">
                 DNS1
+                <button type="button" class="btn col" onclick="copyToClipboard(12)" data-toggle="tooltip" data-placement="top" title="Copy DNS1">
+                  <i class="fas fa-clipboard"></i>
+                </button>
               </label>
               <input type="text" id="form12" class="form-control" readonly value=${view[12]}>
             </div>
@@ -258,6 +270,9 @@ function getSpd(e){
             <div class="sm-form">
               <label for=form13" class="active">
                 DNS2
+                <button type="button" class="btn col" onclick="copyToClipboard(13)" data-toggle="tooltip" data-placement="top" title="Copy DNS2">
+                  <i class="fas fa-clipboard"></i>
+                </button>
               </label>
               <input type="text" id="form13" class="form-control" readonly value=${view[13]}>
             </div>
