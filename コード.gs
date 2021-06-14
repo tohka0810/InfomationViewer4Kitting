@@ -116,13 +116,14 @@ function getSpd(e){
 
     html += `
     <script>
-    function copyToClipboard(index) {
+    async function copyToClipboard(index) {
       var copyTarget = document.getElementById("form"+index);
-      copyTarget.select();
-      document.execCommand("Copy");
-
-      alert("Copied: " + copyTarget.value);
-      }
+      return navigator.clipboard.writeText(copyTarget.value).then(function() {
+        swal("Copied!", copyTarget.value, "success");
+      }).catch(function(error) {
+        swal("Error", copyTarget.value, "error");
+      })
+    }
     </script>
     `;
 
