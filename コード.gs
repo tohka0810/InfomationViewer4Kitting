@@ -116,7 +116,7 @@ function getSpd(e){
 
     html += `
     <script>
-    async function copyToClipboard(index) {
+    function copyToClipboard(index) {
       var copyTarget = document.getElementById("form"+index);
       return navigator.clipboard.writeText(copyTarget.value).then(function() {
         swal("Copied!", copyTarget.value, "success");
