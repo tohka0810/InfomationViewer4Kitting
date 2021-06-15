@@ -108,7 +108,7 @@ function getSpd(e){
     }
   }
 
-  logSheet.getSheetByName('log').appendRow([new Date(), userEmail, 'view', view]); 
+  logSheet.getSheetByName('log').appendRow([new Date(), userEmail, 'view', JSON.stringify(view)]); 
   
   if (!view.length) {
     return '対象の端末はありません！';
