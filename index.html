@@ -15,7 +15,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Project name</a>
+          <p class="navbar-brand">Project name</p>
           <p class="navbar-brand">ログインユーザー：<?= loginUser ?></p>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -39,7 +39,7 @@
           </div>
           <br>
           <div class="form-group">
-            <lavel for="search_key_n">　端末名：　</label> <input name="search_key_n" id="search_key_n" class="form-control"></input>
+            <lavel for="search_key_n">　端末名：　</label> <input name="search_key_n" id="search_key_n" autocapitalize="off" class="form-control"></input>
           </div>
           <button type="button" class="btn btn-success" onclick="search();"><span class="glyphicon glyphicon-repeat">　取得する</span></button>
         </form>
@@ -56,8 +56,26 @@
         </div>
       <hr>
       <footer>
-        <img id="image">
-        <p>&copy; 2021 N.Oishi</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <img id="image">
+            </div>
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 mx-auto">
+              &copy; 2021 N.Oishi
+            </div>
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+            </div>
+          </div>
+        </div>
       </footer>
     </div> <!-- /container -->
  
@@ -67,6 +85,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     
     <!-- Bootstrap Datepicker -->
