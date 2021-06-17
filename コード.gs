@@ -161,7 +161,42 @@ function getSpd(e){
           <input type="text" id="form3" class="form-control" readonly value=${view[3]}>
         </div>
       </div>
+
+      <div class="col-sm-8">
+        <div class="sm-form">
+          <label for=form14" class="active">
+            MobiConnect アカウントID
+            <button type="button" class="btn col" onclick="copyToClipboard(14)" data-toggle="tooltip" data-placement="top" title="MDM Account ID">
+              <i class="fas fa-clipboard"></i>
+            </button>
+          </label>
+          <input type="text" id="form14" class="form-control" readonly value=${view[14]}>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="sm-form">
+          <label for=form15" class="active">
+            端末登録用ユーザID
+            <button type="button" class="btn col" onclick="copyToClipboard(15)" data-toggle="tooltip" data-placement="top" title="User ID for registration of MDM">
+              <i class="fas fa-clipboard"></i>
+            </button>
+          </label>
+          <input type="text" id="form15" class="form-control" readonly value=${view[15]}>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="sm-form">
+          <label for=form16" class="active">
+            端末登録用パスワード
+            <button type="button" class="btn col" onclick="copyToClipboard(16)" data-toggle="tooltip" data-placement="top" title="Password for registration of MDM">
+              <i class="fas fa-clipboard"></i>
+            </button>
+          </label>
+          <input type="text" id="form16" class="form-control" readonly value=${view[16]}>
+        </div>
+      </div>
     </div>
+
     `;
 
     if(view[4] != ""){
@@ -281,55 +316,6 @@ function getSpd(e){
         </div>
         `;
       }
-
-    // html += `
-    //   <table class="table table-hover table-bordered">
-    //     <thead>
-    //       <tr>
-    //         <th>#</th>
-    //         <th>school_name</th>
-    //         <th>managed_name</th>
-    //         <th>device_name</th>
-    //         <th>touch_pass</th>
-    //         <th>apple_id_alias</th>
-    //         <th>apple_id_domain</th>
-    //         <th>apple_id_pass</th>
-    //         <th>apple_temp_pass</th>
-    //         <th>ip_address</th>
-    //         <th>subnetmask</th>
-    //         <th>rooter</th>
-    //         <th>dns1</th>
-    //         <th>dns2</th>
-    //       </tr>
-    //     </thead>
-    //     <tbody>
-    // `;
-
-    // for (let key in data) {
-    //   html += `
-    //       <tr>
-    //         <th scope="row">${data[key][0]}</th>
-    //         <td>${data[key][1]}</td>
-    //         <td>${data[key][2]}</td>
-    //         <td>${data[key][3]}</td>
-    //         <td>${data[key][4]}</td>
-    //         <td>${data[key][5]}</td>
-    //         <td>${data[key][6]}</td>
-    //         <td>${data[key][7]}</td>
-    //         <td>${data[key][8]}</td>
-    //         <td>${data[key][9]}</td>
-    //         <td>${data[key][10]}</td>
-    //         <td>${data[key][11]}</td>
-    //         <td>${data[key][12]}</td>
-    //         <td>${data[key][13]}</td> 
-    //       </tr>
-    // `;
-    // }
-
-    // html += `
-    //     </tbody>
-    //   </table>
-    // `;
     
     return html;
       
