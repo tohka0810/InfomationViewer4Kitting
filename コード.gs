@@ -1,5 +1,5 @@
-const LOG_SHEET_ID = "1mA2qv6uY2JPuZuylfZvefkNa_iryMS84AZKCFOm2b-E"
-const SPD_SHEET_ID = "1oy1BUTiKkqAl6pzNv-7Iqhj8eL-MKv4QhSX9qEjcwro"
+const LOG_SHEET_ID = "1UV72D1Fd2lap-FRelQJRZubbojY10Z33fk_p_BgA4QQ"
+const SPD_SHEET_ID = "1DQnt3DCTWiYBdnxUimxWxuwnjgYizFGK6hkC4isWtSo"
 
 function doGet(e)
 {
@@ -33,8 +33,10 @@ function getHtmlOptions(){
   //foreachで流す
   let htmlOptions;
   for (i=0;i<sheets.length;i++) {
-    var name = sheets[i].getSheetName();
-    htmlOptions += `<option value="${name}">${name}</option>`
+    if(!sheets[i].isSheetHidden()){
+      var name = sheets[i].getSheetName();
+      htmlOptions += `<option value="${name}">${name}</option>`
+    }
   }
   console.warn(htmlOptions);
   return htmlOptions;
@@ -102,7 +104,6 @@ function getSpd(e){
   let view = [];
 
   for (i=0;i<data.length;i++) {
-    // if(data[i].includes(id)){
     if(data[i][2]==id){
         view = data[i]
     }
@@ -314,6 +315,39 @@ function getSpd(e){
             </div>
           </div>
         </div>
+        `;
+      }
+
+    if(view[17] != ""){
+      html += `
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="sm-form">
+            <label for=form1" class="active">
+              検証URL(1)
+            </label>
+            <p id="form17">
+              <a href="${view[17]}" target="_blank" rel="noopener">${view[17]}</a>
+           </p>
+          </div>
+        </div>
+      </div>
+        `;
+      }
+    if(view[18] != ""){
+      html += `
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="sm-form">
+            <label for=form1" class="active">
+              検証URL(2)
+            </label>
+            <p id="form18">
+              <a href="${view[18]}" target="_blank" rel="noopener">${view[18]}</a>
+            </p>
+          </div>
+        </div>
+      </div>
         `;
       }
     
